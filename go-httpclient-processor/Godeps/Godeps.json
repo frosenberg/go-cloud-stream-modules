@@ -1,0 +1,48 @@
+{
+	"ImportPath": "github.com/frosenberg/go-cloud-stream-modules/go-httpclient-processor",
+	"GoVersion": "go1.5.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.8.7-35-gfe6f2b0",
+			"Rev": "fe6f2b03125e4fcafb21406381010e363a072c80"
+		},
+		{
+			"ImportPath": "github.com/alecthomas/template",
+			"Rev": "b867cc6ab45cece8143cfcc6fc9c77cf3f2c23c0"
+		},
+		{
+			"ImportPath": "github.com/alecthomas/units",
+			"Rev": "2efee857e7cfd4f3d0138cc3cbb1b4966962b93a"
+		},
+		{
+			"ImportPath": "github.com/frosenberg/go-cloud-stream/api",
+			"Rev": "1a3b6e852c22ada7bec5582fb6ecfba975812a4f"
+		},
+		{
+			"ImportPath": "github.com/frosenberg/go-cloud-stream/stream",
+			"Rev": "1a3b6e852c22ada7bec5582fb6ecfba975812a4f"
+		},
+		{
+			"ImportPath": "github.com/frosenberg/go-cloud-stream/transport/redis",
+			"Rev": "1a3b6e852c22ada7bec5582fb6ecfba975812a4f"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/pool",
+			"Rev": "9c9a238f8e52b72881f19c4e9113182689f11de0"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/pubsub",
+			"Rev": "9c9a238f8e52b72881f19c4e9113182689f11de0"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/redis",
+			"Rev": "9c9a238f8e52b72881f19c4e9113182689f11de0"
+		},
+		{
+			"ImportPath": "gopkg.in/alecthomas/kingpin.v2",
+			"Comment": "v2.1.3",
+			"Rev": "aef28d186e59d39ed537473dfce4472108ea1045"
+		}
+	]
+}
