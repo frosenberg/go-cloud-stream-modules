@@ -1,16 +1,16 @@
 package main
 
 import (
-	"time"
+	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/frosenberg/go-cloud-stream/api"
 	"github.com/frosenberg/go-cloud-stream/stream"
-	"fmt"
 	"gopkg.in/alecthomas/kingpin.v2"
+	"time"
 )
 
 var (
-//	timeformat = kingpin.Flag("format", "The time format").Default("yyyy-MM-dd HH:mm:ss").String()
+	//	timeformat = kingpin.Flag("format", "The time format").Default("yyyy-MM-dd HH:mm:ss").String()
 	period = kingpin.Flag("fixedDelay", "Time interval in seconds").Default("5").Int()
 )
 
