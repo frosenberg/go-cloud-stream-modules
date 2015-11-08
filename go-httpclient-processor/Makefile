@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-httpclient-processor
-IMAGE_TAG?=1.0.0
+IMAGE_TAG?=1.0.1
 
 default: builddocker
 

@@ -17,15 +17,15 @@
 		},
 		{
 			"ImportPath": "github.com/frosenberg/go-cloud-stream/api",
-			"Rev": "fd2e0ba4563a658b157bf3392c0a3bc351e4cdcf"
+			"Rev": "2705c1b96c9f7b1ef1d07f326372bacccf9d7d18"
 		},
 		{
 			"ImportPath": "github.com/frosenberg/go-cloud-stream/stream",
-			"Rev": "fd2e0ba4563a658b157bf3392c0a3bc351e4cdcf"
+			"Rev": "2705c1b96c9f7b1ef1d07f326372bacccf9d7d18"
 		},
 		{
 			"ImportPath": "github.com/frosenberg/go-cloud-stream/transport/redis",
-			"Rev": "fd2e0ba4563a658b157bf3392c0a3bc351e4cdcf"
+			"Rev": "2705c1b96c9f7b1ef1d07f326372bacccf9d7d18"
 		},
 		{
 			"ImportPath": "github.com/mediocregopher/radix.v2/pool",
@@ -37,6 +37,10 @@
 		},
 		{
 			"ImportPath": "github.com/mediocregopher/radix.v2/redis",
+			"Rev": "9c9a238f8e52b72881f19c4e9113182689f11de0"
+		},
+		{
+			"ImportPath": "github.com/mediocregopher/radix.v2/sentinel",
 			"Rev": "9c9a238f8e52b72881f19c4e9113182689f11de0"
 		},
 		{
