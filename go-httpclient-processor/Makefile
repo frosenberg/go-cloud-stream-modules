@@ -6,7 +6,7 @@ default: builddocker
 
 buildgo:
 	go get github.com/tools/godep
-	CGO_ENABLED=0 GOOS=linux godep go build -ldflags "-s" -a -installsuffix cgo -o main *.go
+	CGO_ENABLED=0 GOOS=linux godep go build -ldflags "-s" -a -installsuffix cgo -o main httpclient-processor.go
 
 builddocker:
 	docker build -t ${DOCKER_REPO}/${IMAGE_NAME}:${IMAGE_TAG} -f ./Dockerfile.build .
