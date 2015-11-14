@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-bridge-processor
-IMAGE_TAG?=1.0.0
+IMAGE_TAG?=1.0.2
 
 default: builddocker
 

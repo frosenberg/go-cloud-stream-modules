@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-http-source
-IMAGE_TAG?=1.0.0
+IMAGE_TAG?=1.0.2
 
 default: builddocker
 

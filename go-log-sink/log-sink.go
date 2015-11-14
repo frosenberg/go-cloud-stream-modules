@@ -7,13 +7,11 @@ import (
 	"github.com/frosenberg/go-cloud-stream/stream"
 )
 
-func logSink(ch api.InputChannel) {
+func logSink(input <-chan *api.Message) {
 	log.Debugln("logSink started")
-
-	out := ch.Receive()
 	for {
-		s := <-out
-		fmt.Println(s)
+		s := <-input
+		fmt.Println(string(s.Content))
 	}
 }
 

@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-log-sink
-IMAGE_TAG?=1.0.1
+IMAGE_TAG?=1.0.2
 
 default: builddocker
 

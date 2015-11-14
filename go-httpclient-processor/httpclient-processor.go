@@ -21,7 +21,7 @@ var (
 	client = &http.Client{ /* CheckRedirect: redirectPolicyFunc,*/ }
 )
 
-func httpclient(ch api.InputOutputChannel) {
+func httpclient(input <-chan *api.Message, output chan<- *api.Message) {
 	log.Infoln("httpclient processor started")
 	log.Debugf("--url: %s", *url)
 	log.Debugf("--httpMethod: %s", *httpMethod)
@@ -30,15 +30,14 @@ func httpclient(ch api.InputOutputChannel) {
 
 	trimmedUrl := strings.Trim(*url, "'\"") // strip because we have seen weird things on some shells
 
-	out := ch.Receive()
 	for {
-		msg := <-out
+		msg := <-input
 		if (msg.Content != nil) {
 
 			req, err := http.NewRequest(*httpMethod, trimmedUrl, nil)
 			if err != nil {
 				log.Errorf("Error while creating request %s %s", *httpMethod, trimmedUrl)
-				ch.Send(api.NewTextMessage([]byte(err.Error())))
+				output<- api.NewTextMessage([]byte(err.Error()))
 			}
 
 			// TODO support JSON path on body to dynamically create request
@@ -52,10 +51,10 @@ func httpclient(ch api.InputOutputChannel) {
 			if (err != nil) {
 				log.Errorf("Error while invoking HTTP %s on %s", *httpMethod, trimmedUrl)
 				// TODO send JSON error message downstream
-				ch.Send(api.NewTextMessage([]byte(err.Error())))
+				output<- api.NewTextMessage([]byte(err.Error()))
 			} else {
 				body, _ := ioutil.ReadAll(resp.Body)
-				ch.Send(api.NewTextMessage(body))
+				output<- api.NewTextMessage(body)
 			}
 		}
 	}

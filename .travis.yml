@@ -5,3 +5,7 @@ services:
 
 script:
   - (cd go-time-source && make builddocker push)
+  - (cd go-log-sink && make builddocker push)
+  - (cd go-http-source && make builddocker push)
+  - (cd go-bridge-processor && make builddocker push)
+  - (cd go-httpclient-processor && make builddocker push)

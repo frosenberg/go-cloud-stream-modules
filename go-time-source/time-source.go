@@ -14,7 +14,7 @@ var (
 	period = kingpin.Flag("fixedDelay", "Time interval in seconds").Default("5").Int()
 )
 
-func timeSource(ch api.OutputChannel) {
+func timeSource(output chan<- *api.Message) {
 	log.Println("timesource started")
 
 	// TODO add timeformat support
@@ -23,7 +23,7 @@ func timeSource(ch api.OutputChannel) {
 
 	t := time.Tick(time.Duration(*period) * time.Second)
 	for now := range t {
-		ch.Send(api.NewTextMessage([]byte(fmt.Sprint(now))))
+		output<- api.NewTextMessage([]byte(fmt.Sprint(now)))
 	}
 
 }

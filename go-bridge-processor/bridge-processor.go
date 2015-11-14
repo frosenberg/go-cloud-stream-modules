@@ -6,12 +6,11 @@ import (
 	"github.com/frosenberg/go-cloud-stream/stream"
 )
 
-func bridge(ch api.InputOutputChannel) {
-	log.Debugf("bridge processor started")
-	out := ch.Receive()
+func bridge(input <-chan *api.Message, output chan<- *api.Message) {
+	log.Infoln("bridge-processor started")
 	for {
-		msg := <-out
-		ch.Send(&msg)
+		msg := <-input
+		output<- msg
 	}
 }
 
