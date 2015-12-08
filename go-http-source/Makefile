@@ -31,5 +31,4 @@ refresh-deps:
 run-kafka-sample:
 	godep go run http-source.go -v --spring.cloud.stream.binder.kafka.brokers=localhost:9092 --spring.cloud.stream.bindings.output.destination=topic:output
 
-
 .PHONY: clean
