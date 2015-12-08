@@ -18,7 +18,7 @@ func httpSource(output chan<- *api.Message) {
 	log.Printf("http-source started on port %s", *stream.ServerPort)
 
 	http.HandleFunc(*pathPattern, func (w http.ResponseWriter, r *http.Request) {
-		output<- api.NewMessageFromHttpRequest(r)
+		output<- api.NewMessageFromHTTPRequest(r)
 		w.WriteHeader(http.StatusOK)
 	})
 

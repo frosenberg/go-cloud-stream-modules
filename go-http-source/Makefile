@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-http-source
-IMAGE_TAG?=1.0.2
+IMAGE_TAG?=1.0.3
 
 default: builddocker
 
@@ -23,5 +23,13 @@ push:
 
 clean:
 	rm main
+
+refresh-deps:
+	rm -rf Godeps
+	godep save
+
+run-kafka-sample:
+	godep go run http-source.go -v --spring.cloud.stream.binder.kafka.brokers=localhost:9092 --spring.cloud.stream.bindings.output.destination=topic:output
+
 
 .PHONY: clean

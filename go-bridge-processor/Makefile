@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-bridge-processor
-IMAGE_TAG?=1.0.2
+IMAGE_TAG?=1.0.3
 
 default: builddocker
 
@@ -23,5 +23,13 @@ push:
 
 clean:
 	rm main
+
+refresh-deps:
+	rm -rf Godeps
+	godep save
+
+run-kafka-sample:
+	godep go run bridge-processor.go -v --spring.cloud.stream.binder.kafka.brokers=localhost:9092 --spring.cloud.stream.bindings.output.destination=topic:bridge_out --spring.cloud.stream.bindings.input.destination=topic:output
+
 
 .PHONY: clean

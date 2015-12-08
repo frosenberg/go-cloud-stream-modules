@@ -1,6 +1,6 @@
 DOCKER_REPO?=frosenberg
 IMAGE_NAME?=gcs-module-log-sink
-IMAGE_TAG?=1.0.2
+IMAGE_TAG?=1.0.3
 
 default: builddocker
 
@@ -24,4 +24,11 @@ push:
 clean:
 	rm main
 
-.PHONY: clean
+refresh-deps:
+	rm -rf Godeps
+	godep save
+
+run-kafka-sample:
+	godep go run *.go -v --spring.cloud.stream.bindings.input.destination=topic:httpclient_out --spring.cloud.stream.binder.kafka.brokers=localhost:9092
+
+.PHONY: clean run-sample
